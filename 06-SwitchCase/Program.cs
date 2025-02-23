@@ -109,6 +109,8 @@
             #region Switch When
             //C#'da switch ifadesi içinde when koşulu kullanarak daha spesifik karşılaştırmalar yapılabilir.
             ////when, case koşullarına ek şartlar eklemeni sağlar.
+            ///
+
             //Sayının pozitif, negatif, string, diğer türleri olup olmadığını kontrol eden bir program yazınız.
 
             object veri = true;
