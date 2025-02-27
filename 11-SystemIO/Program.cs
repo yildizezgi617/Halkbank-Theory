@@ -223,7 +223,9 @@ namespace _11_SystemIO
                 Console.WriteLine("Ürün eklendi");
             }
         }
-
+        /// <summary>
+        /// bu bir denemedir
+        /// </summary>
         private static void Completed()
         {
             int say = 0;
