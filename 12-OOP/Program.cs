@@ -10,14 +10,14 @@
             car1.Model = "X101";
             car1.Color = "Blue";
             car1.Drive();
-            car1.Speed = 0-20;
+            car1.Speed = 20;
 
 
             Car car2 = new Car();
             car2.Brand = "Fiat";
             car2.Model = "Egea";
             car2.Color = "Red";
-            car2.Speed = 0-20;
+            car2.Speed = 10;
             car2.Drive();
 
 

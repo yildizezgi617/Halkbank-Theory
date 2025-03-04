@@ -29,12 +29,17 @@
 
 
             #region Bolum2
-            ICollection<Product> products = new List<Product>() { //Bu liste product istediği için once product nesnemi oluşturdum ve değerlerini verdim.
+            List<Product> products = new List<Product>() { //Bu liste product istediği için once product nesnemi oluşturdum ve değerlerini verdim.
                 new Product() {Code="101", Name ="Kalem-1", Price=56, Stock=100},
+                new Product() { Code="102", Name="Kalem-2", Price=35, Stock=100 },
+              new Product() { Code="103", Name="Kalem-3", Price=55, Stock=100 },
+              new Product() { Code="104", Name="Kalem-4", Price=65, Stock=100 },
+              new Product() { Code="105", Name="Kalem-5", Price=58, Stock=100 },
+              new Product() { Code="106", Name="Kalem-6", Price=51, Stock=100 },
 
 
                 };
-
+            Order order = new Order();
             while (true)
             {
                 foreach (var item in products)
@@ -51,12 +56,12 @@
                     order.AddProduct(products[no]);
                 }
                 Console.WriteLine( "siparişleriniz");
-                foreach (var item in Order.GetProduct())
+                foreach (var item in order.GetProduct())
                 {
                     Console.WriteLine($"Adı : {item.Fullname} Fiyati :{item.Price}");
 
                 }
-                Console.WriteLine( "toplam tutar :");
+                Console.WriteLine( "toplam tutar :" + order.CalculateTotal());
             }
             #endregion
         }
