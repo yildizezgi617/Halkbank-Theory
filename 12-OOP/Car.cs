@@ -12,10 +12,28 @@ namespace _12_OOP_Class
       public string Color;
       public string Brand;
       public string Model;
-       public int Speed;
+      public int Speed;
+       public int fuel;
 
 
         //public int MyProperty { get; set; }
+
+
+        public Car(int _fuel)   //constructor yapıcı method. instance alındığında ilk çalışan method.
+        {
+            fuel = _fuel;
+        }
+        public Car()            //yakıtlı da yakıtsız da oluşturabiliriz.  method overloading
+        {
+
+        }
+        public Car( string _model,int _fuel)
+        {
+          
+            Model = _model;
+
+            fuel = _fuel;
+        }
 
         public void Drive()
         {
