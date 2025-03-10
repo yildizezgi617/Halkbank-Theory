@@ -27,7 +27,12 @@
             //    }
             #endregion
 
-
+            //Bu ornekte urunler ve tüm ürünlerin ve methodların bulunduğu order sınıfı var.
+           // Product sınıfında producta ait ozellikler var. Biz kullanıcı işlemlerini tek bir product uzerinden degil order uzerinden yapıyoruz o yüzden bir ürünün fullnameini getirme methodu
+           //hariç tüm methodları orderda tanımladık. Order sınıfı çoklu productlardan oluşuyor.O yüzden ilk olarak bir liste oluşturuyoruz ve bu listede productlarımızı tutuyoruz.
+           //elimizde bulunan productsları listelemek için bir get product metodu oluşturuyoruz. bu bize productsları donduruyor.
+           // bir kullanıcı ürün alabilir tüm ürünleri listeleyebilir ve siparişinin tutarını hesaplatabilir. bu işlemler order classı uzerinden yapilir.
+           //Urun siparişinde bir listeye eleman ekliyormuş gibi add methodu kullanılır
             #region Bolum2
             List<Product> products = new List<Product>() { //Bu liste product istediği için once product nesnemi oluşturdum ve değerlerini verdim.
                 new Product() {Code="101", Name ="Kalem-1", Price=56, Stock=100},
@@ -39,6 +44,7 @@
 
 
                 };
+
             Order order = new Order();
             while (true)
             {

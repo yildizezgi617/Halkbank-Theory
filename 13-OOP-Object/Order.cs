@@ -10,7 +10,11 @@ namespace _13_OOP_Object
     {
 
         private List<Product> products = new List<Product>(); // liste referans tip olduğu için newledik.
-        public List<Product> GetProduct() => products; //sadece okunabilir ve tek satırlı. //aynı ürün var mı varsa adedini arttır.
+        //public List<Product> GetProduct() => products; //sadece okunabilir ve tek satırlı.  //aynı ürün var mı varsa adedini arttır.
+        public List<Product> GetProduct()
+        {
+            return products;
+        }
 
 
 

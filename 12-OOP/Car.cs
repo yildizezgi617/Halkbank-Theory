@@ -8,7 +8,7 @@ namespace _12_OOP_Class
 {
    public class Car          //internal sadece projede erişilebilir dışardan erişilemez
     {
-
+        
       public string Color;
       public string Brand;
       public string Model;

@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _23_Generic.UrunTakipOrnek.Models.enums
+namespace _19_Inheritance.Example3
 {
-    public enum Status
+    class PartTimeEmployee
     {
-        Active = 0,
-        Inactive = 1,
-
     }
 }

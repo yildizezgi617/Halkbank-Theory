@@ -8,84 +8,38 @@ namespace _15_ClassLab
 {
     public class Customer
     {
-        private int birthdate;
         private static int no = 1000;
-        public int Id { get; set; }
-        private string firstname;
-        private string lastname;
+        private string firstName;
+        private string lastName;
+        private int birthYear;
 
+        public Customer(string firstName, string lastName)
+        {
+            no++;
+            Id = no;
+            FirstName = firstName;
+            LastName = lastName;
+        }
+        public int Id { get; private set; }
 
+        public string LastName
+        {
+            set { lastName = Helper.CheckTurkishChracter(value); }
+        }
+        public string FirstName
+        {
+            set { firstName = Helper.CheckTurkishChracter(value); }
+        }
 
-		public Customer(string firstName, string lastName)
-		{
-			no++;
-			FirstName = firstName;
-			LastName = lastName;
-		}
+        public string FullName => $"{firstName} {lastName}";
 
-
-        public Customer()  // constructordayken bu ayarlamayı yapıyorum id otomatik artsın
-		{
-			no++;
-			Id = no;
-
-		}
-
-		
-
-		public int BirthDate
-		{
-			get 
-			{
-				return DateTime.Now.Year- birthdate;
-			}
-			set
-			{
-				birthdate = value;
-			}
-		}
-
-	
-
-		public string LastName
-		{
-			set 
-			{ 
-				lastname = Helper.CheckTurkishChrackter(value);
-			}
-		}
-
-
-
-		public string FirstName
-		{
-			set 
-			{
-				firstname = Helper.CheckTurkishChrackter(value);
-			}
-		}
-
-		//private string fullname;
-
-		public string FullNane => $"{firstname} {lastname}";
-		
-	}
-
-	public static class Helper   //static bir class oluşturduk
-	{
-
-		public static string CheckTurkishChrackter(string param)
-		{
-			string[] turkce = new string[] { "ı", "İ", "ü","Ü", "ç", "Ç", "ş", "Ş", "ö", "Ö", "Ğ", "ğ" };
-			string[] ingilizce = new string[] { "i", "I", "u", "U", "c", "C", "s", "S", "o", "O", "G", "g" };
-			for (int i = 0; i < turkce.Length; i++)
-			{
-				param = param.Replace(turkce[i], ingilizce[i]);
-
-			}
-			return param.ToUpper();
-		} 
-	} 
-
+        /// <summary>
+        /// In Year Out Age
+        /// </summary>
+        public int Age
+        {
+            get { return DateTime.Now.Year - birthYear; }
+            set { birthYear = value; }
+        }
+    }
 }
- 
