@@ -1,40 +1,35 @@
-﻿  namespace _20_Extension 
+﻿namespace _20_Extension
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            //Extension genişletme metotları, var olan bir tipin(sınıf interface method) içini genişletmemizi sağlar.
-            //yapıyı değiştirmedn ozellik eklenebilir.
-            Console.WriteLine("Hello World".ReverseString());
+            Console.WriteLine("Hello, World!".ReverseString());
 
             string isim = "fatih";
-            Console.WriteLine(isim.ToFirstUpper());
-
-            Console.WriteLine(isim.ToFirstUpper(2));
-
+            Console.WriteLine(isim.CapitaliceFirst(3));
 
             try
             {
-                int x = int.Parse("asdA");
+                int x = int.Parse("asda");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                Console.WriteLine(Exception.);
+                Console.WriteLine(ex.GetFirendlyMessage());
             }
-
 
             Student student = new Student();
-            student.Scores.Add(50);
-            student.Scores.Add(60);
-            student.Scores.Add(80);
-            Console.WriteLine( student.IsSuccessfull());
+            student.Scores.Add(70);
+            student.Scores.Add(75);
+            student.Scores.Add(55);
+
+            Console.WriteLine(student.IsSuccessful());
 
 
-            MovieCollection movieCollection = new MovieCollection();    
-            movieCollection[0] = "film1";
-            Console.WriteLine(movieCollection[2]);
+            MovieCollection collection = new MovieCollection();
+            collection[0] = "Inception";
+            Console.WriteLine(collection[2]);
+
         }
     }
 }

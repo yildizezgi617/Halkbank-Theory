@@ -8,43 +8,34 @@ namespace _20_Extension
 {
     public static class StringExtension
     {
-        //Metni tersine çeviren bir extension metot
-        public static string ReverseString(this string str)  //string sınıfını genişleticem
+        //Metni ters çeviren bir extension Metot.
+
+        public static string ReverseString(this string str)
         {
-            char[] charArray = str.ToCharArray();  //gelen metni diziye atma
-            Array.Reverse(charArray);                   //diziyi tersine çevirme
-            return new string(charArray);   //diziyi string olarak dondurme
+            char[] charArray = str.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
         }
 
-
-
-
-        //İlk harfi büyük yapan metot
-        public static string ToFirstUpper(this string str)
+        public static string CapitaliceFirst(this string str)
         {
             if (string.IsNullOrEmpty(str))
-            {
                 return str;
-            }
+
             return char.ToUpper(str[0]) + str.Substring(1);
         }
 
-        //belirtilen indeksteki harfi büyük harf yapan metot
-        public static string ToFirstUpper(this string str, int index)
+        public static string CapitaliceFirst(this string str, int index)
         {
             if (string.IsNullOrEmpty(str))
-            {
                 return str;
-            }
+
             return str.Substring(0, index) + char.ToUpper(str[index]) + str.Substring(index + 1);
         }
 
-
-
-        public static bool IsSuccessfull(this Student student)
+        public static bool IsSuccessful(this Student student)
         {
             return student.Scores.Average() >= 70;
         }
-
     }
 }

@@ -11,9 +11,6 @@ namespace _20_Extension
         public string Name { get; set; }
         public int Age { get; set; }
         public List<int> Scores { get; set; } = new List<int>();
-
-
-
-
     }
+
 }

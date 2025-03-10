@@ -6,36 +6,29 @@ using System.Threading.Tasks;
 
 namespace _20_Extension
 {
-  public class MovieCollection
-        // Sınıfı indeksleyebilir bir hale getirdik.
+    public class MovieCollection
     {
         private List<string> movies = new List<string>();
 
-
-
+        public int Count => movies.Count;
 
         //Indexer
         public string this[int index]
         {
             get
             {
-                if (index>=0 && index< movies.Count)
-                {
+                if (index >= 0 && index < movies.Count)
                     return movies[index];
-                }
-                return "invalid index";
+                return "Invalid Index";
             }
             set
             {
-                if (index >=0 && index< movies.Count)
-                {
+                if (index >= 0 && index < movies.Count)
                     movies[index] = value;
-                }
                 else if (index == movies.Count)
-                {
                     movies.Add(value);
-                }
-                else Console.WriteLine("invalid index");
+                else
+                    Console.WriteLine("Invalid Index");
             }
         }
     }

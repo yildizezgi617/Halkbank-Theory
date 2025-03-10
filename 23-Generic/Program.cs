@@ -1,128 +1,73 @@
-﻿namespace _23_Generic
+﻿using _23_Generic.Exceptions;
+using _23_Generic.Models;
+using _23_Generic.Repository.Concrete;
+
+namespace _23_Generic
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            //Kodun veri tipinden bağımsız olmasını sağlar.
-            //Kodun yeniden kullanılabilirliğini arttırır.
-            //Performans artışı sağlar.
-            //Tip güvenliği sağlar.
+            InventoryManagement<FoodProduct> inventoryFood = new InventoryManagement<FoodProduct>();
 
-            Deneme<string> deneme = new Deneme<string>();        //T yerine string yazdık.
-            Deneme<int> deneme2 = new Deneme<int>();             //T yerine int yazdık. 
+            foreach (var item in inventoryFood.GetAll())
+            {
+                Console.WriteLine(item);
+            }
 
-            Denemex<int, string> denemex = new Denemex<int, string>(); //Birden fazla tip alabilir.
+            Console.WriteLine("\n" + new string('*', 20) + "\n");
+            inventoryFood.Add(new FoodProduct("Kivi", 100, DateTime.Now.AddDays(10)) { Price = 100 });
 
-            Repository<string> repository = new Repository<string>();   //Repository sınıfı string tipinde çalışacak.
-            repository.Add("Fatih");
-            Repository<int> repository2 = new Repository<int>();          //Repository sınıfı int tipinde çalışacak.
-            repository2.Add(5);
+            foreach (var item in inventoryFood.GetAll())
+            {
+                Console.WriteLine(item);
+            }
 
+            Console.WriteLine("\n" + new string('*', 20) + "\n");
 
+            var product = inventoryFood.Get(3);
+            Console.WriteLine(product);
 
+            Console.WriteLine("\n" + new string('*', 20) + "\n");
 
+            inventoryFood.Add(product);
+
+            foreach (var item in inventoryFood.GetAll())
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("\n" + new string('*', 20) + "\n");
 
             try
             {
+                inventoryFood.Update(new FoodProduct("Kivi", 200, DateTime.Now.AddDays(10)), 6);
 
+                Console.WriteLine("\n" + new string('*', 20) + "\n");
+
+                foreach (var item in inventoryFood.GetAll())
+                {
+                    Console.WriteLine(item);
+                }
             }
-            catch (Exception)
+            catch (StockAmountException ex)
             {
-
-                throw;
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
 
 
+            InventoryManagement<ElectronicProduct> inventoryManagement = new InventoryManagement<ElectronicProduct>();
+
+            foreach (var item in inventoryManagement.GetAll())
+            {
+                Console.WriteLine(item);
+            }
+
 
         }
-    }
-
-
-
-
-
-    public class Deneme<T>  //T yerine herhangi bir isim verilebilir., T tipi belirtir, artık Deneme deneme = new Deneme() ; şeklinde   kullanılamaz. bir tip vermem gerekir. 
-    {
-        private T value;
-        public void AddItem(T value)
-        {
-            this.value = value;
-        }
-
-        public T GetItem()
-        {
-            return value;
-        }
-    }
-
-
-
-
-
-    public interface CRUD<T>
-    {
-        void Add(T item);
-        void Remove(T item);
-        T Get(T item);
-        List<T> GetList();
-    }
-
-
-
-
-
-    public class Product : CRUD<Product> //Product sınıfı CRUD interface'inden kalıtım aldı.Generic yapı kullanildi.
-    {
-        public void Add(Product item)
-        {
-            throw new NotImplementedException();
-        }
-        public Product Get(Product item)
-        {
-            throw new NotImplementedException();
-        }
-        public List<Product> GetList()
-        {
-            throw new NotImplementedException();
-        }
-        public void Remove(Product item)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-
-
-
-
-    public class Denemex<Tkey, TValue> //Birden fazla tip alabilir.
-    {
-        public Tkey key;
-        public TValue value;
-    }
-
-
-
-
-    public class Repository<T>
-    {
-
-        private List<T> list = new List<T>();
-        public void Add(T item)
-        {
-            list.Add(item);
-        }
-        public void Remove(T item)
-        {
-            list.Remove(item);
-        }
-        public T GetItem(int index)
-        {
-            return list[index];
-        }
-
-
-
     }
 }

@@ -8,12 +8,9 @@ namespace _20_Extension
 {
     public static class ExceptionExtensions
     {
-
-        public static string GetFullMessage(this Exception exception)
+        public static string GetFirendlyMessage(this Exception exception)
         {
-           
-            return $"Error:+ exception.Message + \nOccured at: {exception.StackTrace} ? ";
-
+            return $"Error: {exception.Message}\nOccured at: {exception.StackTrace?.Split('\n')[0]}\n Date Time: {DateTime.UtcNow}";
         }
     }
 }
