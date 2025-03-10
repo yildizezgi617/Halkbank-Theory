@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19-Inheritance", "19-Inheri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20-Extension", "20-Extension\20-Extension.csproj", "{12903365-5F11-486A-8853-9639B909148A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23-Generic", "23-Generic\23-Generic.csproj", "{2B29D93F-AB87-4CBD-AF3F-5330F98BFBAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +125,10 @@ Global
 		{12903365-5F11-486A-8853-9639B909148A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12903365-5F11-486A-8853-9639B909148A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12903365-5F11-486A-8853-9639B909148A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B29D93F-AB87-4CBD-AF3F-5330F98BFBAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B29D93F-AB87-4CBD-AF3F-5330F98BFBAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B29D93F-AB87-4CBD-AF3F-5330F98BFBAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B29D93F-AB87-4CBD-AF3F-5330F98BFBAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

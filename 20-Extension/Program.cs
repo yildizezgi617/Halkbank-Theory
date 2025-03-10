@@ -1,4 +1,4 @@
-﻿namespace _20_Extension 
+﻿  namespace _20_Extension 
 {
     internal class Program
     {
