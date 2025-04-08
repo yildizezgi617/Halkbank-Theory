@@ -84,8 +84,8 @@ namespace _19_Inheritance
             //}
 
 
-            Employee employee = new FullTimeEmployee() { Id = 1, Name = "Fatih", AnnualSalary = 100 };
-            Employee employee1 = new PartTimeEmployee() { Id = 2, Name = "Hasan", HoursWorked = 100, HourlyRate = 2 };
+            //Employee employee = new FullTimeEmployee() { Id = 1, Name = "Fatih", AnnualSalary = 100 };
+            //Employee employee1 = new PartTimeEmployee() { Id = 2, Name = "Hasan", HoursWorked = 100, HourlyRate = 2 };
 
 
 
